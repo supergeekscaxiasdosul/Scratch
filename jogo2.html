@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercícios</title>
+  <link rel="stylesheet" href="jogo2.css">
+  <link rel="icon" type="image/png" href="./img/logo0remov.png"> 
+</head>
+<body>
+  <div class="btt">
+    <button class="avancar" onclick="toggleDarkMode()">👓</button>
+  </div>
+  <h1 class="tit">📘 Documentação do Projeto - Jogo Pong</h1>
+  <div class="image">
+    <img src="./img/pong.PNG" alt="">
+  </div>
+
+  <div class="bloco">
+    <h2>🏓 Raquete do Jogador 1 - Controle com teclas (W/S)</h2>
+    <pre>
+quando a bandeira verde for clicada
+vá para x: (-200) y: (0)
+sempre
+    se &lt;tecla [w] pressionada?&gt; então
+        adicione (10) a y
+    fim
+    se &lt;tecla [s] pressionada?&gt; então
+        adicione (-10) a y
+    fim
+fim
+    </pre>
+    <p class="explicacao">👉 Isso faz o personagem se mover para cima e para baixo com as teclas do teclado.</p>
+
+  </div>
+
+  <div class="bloco">
+    <h2>🧱 Limitar movimento da raquete do jogador na tela</h2>
+    <pre>
+quando a bandeira verde for clicada
+sempre
+    se &lt;(posição y) &gt; (130)&gt; então
+        mude y para (130)
+    fim
+    se &lt;(posição y) &lt; (-130)&gt; então
+        mude y para (-130)
+    fim
+fim
+    </pre>
+    <p class="explicacao">👉 Limita o personagem a não sair da tela.</p>
+  </div>
+
+  <div class="bloco">
+    <h2>🏓 Raquete do Jogador 2 - IA simples</h2>
+    <pre>
+quando a bandeira verde for clicada
+vá para x: (200) y: (0)
+sempre
+    mude y para ([bola])
+fim
+    </pre>
+    <p class="explicacao">👉 [bola] é uma variável.</p>
+    <p class="explicacao">👉 Essa programação faz a barra seguir o inimigo.</p>  
+  </div>
+
+  <div class="bloco">
+    <h2>⚽ Bola - Movimento, quique e pontuação</h2>
+    <p class="explicacao">👉 [pontos p1] e [pontos p2] são variáveis.</p>
+    <pre>
+quando a bandeira verde for clicada
+vá para x: (0) y: (0)
+aponte para direção (número aleatório entre (45) e (-45))
+sempre
+    mova (10) passos
+    se tocar na borda, volte
+    se &lt;tocando em [Raquete1]?&gt; então
+        aponte para direção (número aleatório entre (45) e (135))
+    fim
+    se &lt;tocando em [Raquete2]?&gt; então
+        aponte para direção (número aleatório entre (-45) e (-135))
+    fim
+    se &lt;(posição x) &gt; (216)&gt; então
+        adicione (1) a [pontos p1]
+        vá para x: (0) y: (0)
+        aponte para direção (número aleatório entre (45) e (-45))
+    fim
+    se &lt;(posição x) &lt; (-216)&gt; então
+        adicione (1) a [pontos p2]
+        vá para x: (0) y: (0)
+        aponte para direção (número aleatório entre (45) e (-45))
+fim
+
+quando a bandeira verde for clicada
+mude [pontos p1] para (0)
+mude [pontos p2] para (0)      
+    </pre>
+    <p class="explicacao">👉 Essa programação faz a bola nascer aleatoriamente entre os valores escolhidos.</p>
+    <p class="explicacao">👉 Também rebate a bola quando toca em uma das raquetes.</p>
+    <p class="explicacao">👉 Verificamos se a bola passou de alguma raquete, marcando a pontuação e fazendo a bola voltar para o meio.</p>
+    <p class="explicacao">👉 Por último, resetamos a pontuação quando começa nosso jogo.</p>
+  </div>
+
+  <div class="bt">
+    <button class="voltar">
+      <a href="./index.html">Voltar</a>
+  </button>
+    <button class="avancar">
+      <a href="./jogo3.html">Avançar</a>
+  </button>
+  </div>
+  <script src="./script.js"></script>
+
+</body>
+</html>

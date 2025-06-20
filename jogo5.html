@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercícios</title>
+  <link rel="stylesheet" href="./jogo5.css">
+  <link rel="icon" type="image/png" href="./img/logo0remov.png">
+</head>
+<body>
+    <div class="btt">
+        <button class="avancar" onclick="toggleDarkMode()">👓</button>
+      </div>
+  <h1 class="tit">📘 Documentação do Projeto - Labirinto</h1>
+  <div class="image">
+    <img src="./img/maze.PNG" alt="Personagem One Piece">
+  </div>
+  <div class="bloco">
+    <h2>🌳 Labirinto - Mapa</h2>
+    <pre>
+quando [bandeira verde] for clicado
+mostre
+mude para a fantasia [maze1]
+
+quando eu receber [2]
+mude para a fantasia [maze2]
+
+quando eu receber [3]
+mude para a fantasia [maze3]
+
+quando eu receber [4]
+mude para a fantasia [maze4]
+
+quando eu receber [win]
+esconda
+    </pre>
+    <p class="explicacao">👉 Mostra a fantasia 1. Conforme vai recebendo as mensagens, muda para as respectivas.</p>
+  </div>
+  <div class="bloco">
+    <h2>🎮 Personagem - Controle com setas</h2>
+    <pre>
+quando [bandeira verde] for clicado
+sempre
+    se &lt;tecla [seta direita] pressionada?&gt; então
+        aponte para a direção (90)
+        adicione (5) a x
+        se &lt;tocando na cor [preta]?&gt; então
+            adicione (-5) a x
+        fim
+    fim
+    se &lt;tecla [seta esquerda] pressionada?&gt; então
+        aponte para a direção (-90)
+        adicione (-5) a x
+        se &lt;tocando na cor [preta]?&gt; então
+            adicione (5) a x
+        fim
+    fim
+    se &lt;tecla [seta para cima] pressionada?&gt; então
+        aponte para a direção (0)
+        adicione (5) a y
+        se &lt;tocando na cor [preta]?&gt; então
+            adicione (-5) a y
+        fim
+    fim  
+    se &lt;tecla [seta para baixo] pressionada?&gt; então
+        aponte para a direção (180)
+        adicione (-5) a x
+        se &lt;tocando na cor [preta]?&gt; então
+            adicione (5) a x
+        fim
+    fim
+fim
+
+quando [bandeira verde] for clicado
+mostre
+vá para x: (13) y: (-170)
+sempre
+    próxima fantasia
+    espere (0.2) segundos
+fim
+
+quando [bandeira verde] for clicado
+mude [labirinto 1] para (1)
+sempre
+    se &lt;&lt;tocando em [ghost]?&gt; e &lt;(labirinto1) = [1]&gt;&gt; então
+        adicione (1) a [labirinto 1]
+        transmita [2]
+        vá para x: (13) y: (-170)
+    fim
+    se &lt;&lt;tocando em [ghost]?&gt; e &lt;(labirinto1) = [2]&gt;&gt; então
+        adicione (1) a [labirinto 1]
+        transmita [3]
+        vá para x: (13) y: (-170)
+    fim
+    se &lt;&lt;tocando em [ghost]?&gt; e &lt;(labirinto1) = [3]&gt;&gt; então
+        adicione (1) a [labirinto 1]
+        transmita [4]
+        vá para x: (13) y: (-170)
+    fim
+    se &lt;&lt;tocando em [ghost]?&gt; e &lt;(labirinto1) = [4]&gt;&gt; então
+        esconda
+        transmita [win]
+    fim
+fim
+    </pre>
+    <p class="explicacao">👉labirinto 1 é uma variável.</p>
+    <p class="explicacao">👉 Movimenta o personagem pelas setas e verifica se ele está batendo nas paredes.</p>
+    <p class="explicacao">👉 Verifica se está tocando no fantasma e em qual cenário está, para mudar de mapa.</p>
+    <p class="explicacao">👉 Faz o personagem ficar animado.</p>
+    <p class="explicacao">👉Transmite "win" no último mapa.</p>
+  </div>
+  <div class="bloco">
+    <h2>👻 fantasma - Fim do mapa</h2>
+    <pre>
+quando [bandeira verde] for clicado
+vá para x: (-13) y: (170)
+mostre
+sempre
+    próxima fantasia
+    espere (0.1) segundos
+fim
+
+quando [bandeira verde] for clicado
+esconda
+vá para x: (-13) y: (170)
+mostre
+
+quando eu receber [3]
+esconda
+vá para x: (-13) y: (170)
+mostre
+
+quando eu receber [4]
+esconda
+vá para x: (-13) y: (170)
+mostre
+
+quando eu receber [win]
+esconda
+esconda a variável [labirinto1]
+    </pre>
+    <p class="explicacao">👉 Deixa o personagem animado.</p>
+    <p class="explicacao">👉 Conforme recebe as mensagens, teletransporta para a saída de cada mapa.</p>
+    <p class="explicacao">👉 Esconde a variável.</p>
+  </div>
+
+  <div class="bloco">
+    <h2>🎉 Win - Vitória</h2>
+    <pre>
+quando [bandeira verde] for clicado
+esconda
+
+quando eu receber [wim]
+mostre
+sempre
+    próxima fantasia
+    espere (0.1) segundos
+fim
+    </pre>
+    <p class="explicacao">👉 Deixa o personagem animado.</p>
+    <p class="explicacao">👉 Mostra quando recebe win, esconde quando inicia.</p>
+  </div>
+
+  <div class="bt">
+    <button class="voltar">
+      <a href="./jogo4.html">Voltar</a>
+  </button>
+    <!-- <button class="avancar">
+      <a href="./jogo6.html">Avançar</a>
+  </button> -->
+  </div>
+  <script src="./script.js"></script>
+
+</body>
+</html>

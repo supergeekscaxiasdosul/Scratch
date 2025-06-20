@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercícios</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="./img/logo0remov.png">
+</head>
+<body>
+
+  <div class="bt">
+    <button class="avancar" onclick="toggleDarkMode()">👓</button>
+  </div>
+
+  <h1>📘 Documentação do Projeto - Jogo Dino</h1>
+
+  <div class="image">
+    <img src="./img/dino.PNG" alt="">
+  </div>
+
+  <div class="bloco">
+    <h2>🧩 Animação do Personagem</h2>
+    <pre>
+quando [bandeira verde] for clicado
+mostre
+sempre
+    próxima fantasia
+    espere (0.1) segundos
+fim
+    </pre>
+    <p class="explicacao">👉 Isso faz o personagem ficar animado, como se estivesse se mexendo o tempo todo.</p>
+  </div>
+
+  <div class="bloco">
+    <h2>🧩 Posição Inicial e Pulo</h2>
+    <pre>
+quando [bandeira verde] for clicado
+vá para x: (-178) y: (-146)
+sempre
+  se &lt;tecla [espaço] pressionada?&gt; então
+        deslize por (0.2) s até x: (-178) y: (-76)
+        espere (0.2) segundos
+        deslize por (0.2) s até x: (-178) y: (-146)
+        espere (0.2) segundos
+  fim
+fim
+    </pre>
+    <p class="explicacao">👉 Isso faz o personagem pular quando apertar espaço.</p>
+  </div>
+
+  <div class="bloco">
+    <h2>🧩 Direção do Personagem e Colisão</h2>
+    <pre>
+quando [bandeira verde] for clicado
+aponte para a direção (90)
+sempre
+  se &lt;tocando em [cactos]?&gt; então
+        transmita [game over]
+  fim
+fim
+    </pre>
+    <p class="explicacao">👉 Isso verifica se o personagem encostou no cacto. Se sim, envia a mensagem "game over".</p>
+  </div>
+
+  <div class="bloco">
+    <h2>🌵 Programação do Cacto</h2>
+    <pre>
+quando [bandeira verde] for clicado
+mostre
+vá para x: (250) y: (-146)
+sempre
+    adicione (-10) a x
+fim
+    </pre>
+    <p class="explicacao">👉 Isso faz o cacto andar para a esquerda continuamente.</p>
+
+    <pre>
+quando [bandeira verde] for clicado
+sempre
+    se &lt;(posição x) = (-249)&gt; então
+        vá para x: (250) y: (-146)
+    fim
+fim    
+    </pre>
+    <p class="explicacao">👉 Reinicia o cacto no lado direito da tela.</p>
+  </div>
+
+  <div class="bloco">
+    <h2>🌍 Programação do Chão</h2>
+    <pre>
+quando [bandeira verde] for clicado
+mostre
+sempre
+    próxima fantasia
+    espere (0.2) segundos
+fim
+    </pre>
+    <p class="explicacao">👉 Faz o chão parecer que está se movendo continuamente.</p>
+  </div>
+
+  <div class="bloco">
+    <h2>☁️ Nuvem 1</h2>
+    <pre>
+quando [bandeira verde] for clicado
+mostre
+vá para x: (168) y: (-16)
+sempre
+    mova (-1.5) passos
+fim
+
+quando [bandeira verde] for clicado
+sempre
+    se &lt;(posição x) = -273&gt; então
+        vá para x: (168) y: (-16)
+    fim
+fim    
+    </pre>
+    <p class="explicacao">👉 Nuvem que se move e retorna para a direita ao sair da tela.</p>
+  </div>
+
+  <div class="bloco">
+    <h2>☁️ Nuvem 2</h2>
+    <pre>
+quando [bandeira verde] for clicado
+mostre
+vá para x: (216) y: (145)
+sempre
+    mova (-1) passos
+fim
+
+quando [bandeira verde] for clicado
+sempre
+    se  &lt;posição x = -273&gt; então
+        vá para x: (216) y: (145)
+    fim
+fim
+    </pre>
+  </div>
+
+  <div class="bloco">
+    <h2>🪦 Sprite "Game Over"</h2>
+    <pre>
+quando [bandeira verde] for clicado
+esconda
+sempre
+    próxima fantasia
+    espere (0.1) segundos
+fim
+
+quando eu receber [game over]
+mostre
+    </pre>
+    <p class="explicacao">👉 Esconde no início e mostra quando o jogo termina.</p>
+  </div>
+
+  <div class="bloco">
+    <h2>🪦 Todos os atores nemos o gameover</h2>
+    <pre>
+quando eu receber [game over]
+esconda
+    </pre>
+    <p class="explicacao">👉 Esconde todos os atores ao receber a mensagem de fim de jogo.</p>
+  </div>
+
+<div class="bt">
+  <!-- <button class="voltar">
+    Voltar
+    
+</button> -->
+  <button class="avancar">
+    <a href="./jogo2.html">Avançar</a>
+</button>
+</div>
+<script src="./script.js"></script>
+</body>
+</html>

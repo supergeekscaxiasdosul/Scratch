@@ -1,0 +1,120 @@
+body.dark {
+  background-color: #121212;
+  color: #eee;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+body.dark h2 {
+  background-color: #333;
+}
+
+body.dark pre {
+  background: #1e1e1e;
+}
+
+body.dark .avancar, 
+body.dark .voltar {
+  background-color: #1e1e1e;
+  border: solid 1px #555;
+  color: #eee;
+}
+
+body.dark .avancar:hover, 
+body.dark .voltar:hover {
+  background-color: #333;
+}
+
+body.dark a {
+  color: #eee;
+}
+
+.btt{
+  display: flex;
+  justify-content: flex-end;
+}
+/* --------------------------------------------------    */
+    
+    
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      background-color: #ccc;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    /* h1{
+      background-color: #ccc;
+      padding: 10px;
+      border-radius: 5px;
+    } */
+
+    pre {
+      background: #eee;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .bloco {
+      margin-bottom: 20px;
+    }
+    .explicacao {
+      font-style: italic;
+    }
+
+    
+    .bt{
+        display: flex;
+        justify-content: space-between;
+    }
+    .avancar, .voltar{
+        background-color: #f7f7f7;
+        border-radius: 5px;
+        border: solid 1px  #cccccc;
+        height: 30px;
+    
+    }
+    
+    .avancar:hover, .voltar:hover{
+        background-color:#eee ;
+     
+    }
+    
+    a{
+        text-decoration: none;
+        color: #333;
+    }
+
+    .image{
+      max-width: 800px;
+      display: flex;
+      justify-content: center;
+      /* background: #eee;
+      border-radius: 5px; */
+    }
+    img{
+      max-width: 700px;
+      border-radius: 5px;
+    }
+    button{
+      width: 62.67px;
+    }
+
+    .tit{
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      img{
+        max-width: 300px;
+      }
+    }

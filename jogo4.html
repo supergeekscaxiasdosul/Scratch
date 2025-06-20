@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercícios</title>
+  <link rel="stylesheet" href="./jogo4.css">
+  <link rel="icon" type="image/png" href="./img/logo0remov.png">
+</head>
+<body>
+    <div class="btt">
+        <button class="avancar" onclick="toggleDarkMode()">👓</button>
+      </div>
+  <h1 class="tit">📘 Documentação do Projeto - Space Invaders</h1>
+  <div class="image">
+    <img src="./img/spaceInvaders.PNG" alt="Personagem One Piece">
+  </div>
+  <div class="bloco">
+    <h2>👽 Inimigos - Clones</h2>
+    <pre>
+quando [bandeira verde] for clicado
+mostre
+vá para x: (-201) y: (131)
+repita (9) vezes
+    crie clone de [este ator]
+    mova (50) passos
+fim
+adicione (-50) a y
+repita (7) vezes
+    mova (-61) passos
+    crie clone de [este ator]
+adicione (-50) a y
+fim
+repita (5) vezes
+    mova (62) passos
+    crie clone de [este ator]
+fim
+esconda
+
+quando eu começar como um clone
+sempre
+    próxima fantasia
+    espere (0.1) segundos
+fim
+
+quando eu começar como um clone
+sempre
+    espere (1.2) segundos
+    adicione (-20) a y
+fim
+
+quando eu começar como um clone
+sempre
+    se &lt;tocando em [tiro]?&gt; então
+        transmita [dano]
+        apague este clone
+    fim
+fim
+
+quando eu começar como um clone
+sempre
+    se &lt;tocando em [personagem1]?&gt; então
+        transmita [game over]
+    fim
+fim
+    </pre>
+    <p class="explicacao">👉 Cria clones do inimigo e os posiciona, ao lado e abaixo um dos outros.</p>
+    <p class="explicacao">👉 Deixa os personagens animados e se movimentando para baixo.</p>
+    <p class="explicacao">👉 Cria clones do inimigo e os posiciona, ao lado e abaixo um dos outros.</p>
+    <p class="explicacao">👉 Verifica se o clone esta colidindo com o tiro, verifica se colide com o player.</p>
+  </div>
+
+  <div class="bloco">
+    <h2>🛸 Personagem - Controle com setas</h2>
+    <pre>
+quando [bandeira verde] for clicado
+mostre
+vá para x: (0) y: (-159)
+sempre
+    se &lt;tecla [seta direita] pressionada?&gt; então
+        adicione (10) a x
+    fim
+    se &lt;tecla [seta esquerda] pressionada?&gt; então
+        adicione (-10) a x
+    fim
+fim
+
+Quando eu receber [game over]
+esconda
+    </pre>
+    <p class="explicacao">👉 Faz o personagem se mover pelas setas do teclado.</p>
+    <p class="explicacao">👉 Esconde na na tela de game over.</p>
+  </div>
+
+  <div class="bloco">
+
+    <h2>🔫 Disparar lasers</h2>
+    <pre>
+quando [bandeira verde] for clicado
+vá para a camada [trás]
+vá para x: (0) y: (-159)
+aponte para a direção (90)
+sempre
+    se  se &lt;tecla [espaço] pressionada?&gt; então
+        transmita [tiro]
+    fim
+fim
+
+quando eu receber [tiro]
+vá para [personagem1]
+mostre
+repita até que &lt;tocando em [borda]?&gt;
+    adicione (10) a y
+fim
+vá para [personagem1]
+
+quando eu receber [dano]
+esconda
+vá para [personagem1]
+    </pre>
+    <p class="explicacao">👉 Transmite o tiro quando clicarmos na tecla espaço.</p>
+    <p class="explicacao">👉 Faz com que o tiro se mova em Y até a borda de cima.</p>
+    <p class="explicacao">👉 Esconde o tiro quando ele colide com algo e faz com que sempre volte para o personagem1.</p>
+  </div>
+
+  <div class="bloco">
+
+    <h2>😵 Sprite "Game Over"</h2>
+    <pre>
+quando [bandeira verde] for clicado
+esconda
+
+quando eu receber [game over]
+mostre
+pare [todos]
+    </pre>
+    <p class="explicacao">👉 Esconde no início do jogo.</p>
+    <p class="explicacao">👉 Mostra o game over quando o alien colide com o personagem1.</p>
+  </div>
+
+  <div class="bt">
+    <button class="voltar">
+      <a href="./jogo3.html">Voltar</a>
+  </button>
+    <button class="avancar">
+      <a href="./jogo5.html">Avançar</a>
+  </button>
+  </div>
+  <script src="./script.js"></script>
+
+</body>
+</html>
