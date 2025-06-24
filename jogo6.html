@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercícios</title>
+  <link rel="stylesheet" href="./jogo6.css">
+  <link rel="icon" type="image/png" href="./img/logo0remov.png">
+</head>
+<body>
+    <div class="btt">
+        <button class="avancar" onclick="toggleDarkMode()">👓</button>
+      </div>
+  <h1 class="tit">📘 Documentação do Projeto - Snake</h1>
+  <div class="image">
+    <img src="./img/cobrinha.PNG" alt="Personagem One Piece">
+  </div>
+  <div class="bloco">
+    <h2>🐍 Personagem - Snake</h2>
+    <pre>
+quando [bandeira verde] for clicado
+vá para x: (-180) y: (21)
+aponte para a direção (90)
+sempre
+    se &lt;tecla [seta para cima] pressionada?&gt; então
+        aponte para a direção (0)
+    fim
+fim
+    se &lt;tecla [seta para baixo] pressionada?&gt; então
+        aponte para a direção (180)
+    fim
+fim
+    se &lt;tecla [seta para direita] pressionada?&gt; então
+        aponte para a direção (90)
+    fim
+fim
+    se &lt;tecla [seta para esquerda] pressionada?&gt; então
+        aponte para a direção (-90)
+    fim
+fim
+
+quando [bandeira verde] for clicado
+mude [pontos] para (0)
+mude [tamanho] para (0.2)
+sempre
+  se &lt;tocando em [fruta]?&gt; então
+    adicione (1) a [pontos]
+    adicione (0.2) a [tamanho]
+    transmita [pegou]
+  fim
+fim
+
+quando [bandeira verde] for clicado
+sempre
+    mova (4) passos
+fim
+
+quando eu começar como um clone
+espere (tamanho) segundos
+apague este clone
+
+quando [bandeira verde] for clicado
+sempre
+    mude para a fantasia [fantasia2]
+    crie um clone de [este ator]
+    mude para a fantasia [fantasia1]
+    mova (1) passos
+    epere (0.05) segundos
+fim
+    </pre>
+    <p class="explicacao">👉 A cobra sempre se move automaticamente. Usamos as setas para controlar sua direção.</p>
+    <p class="explicacao">👉 O tamanho dela é, na verdade, o comprimento inicial.</p>
+    <p class="explicacao">👉 Quando pegamos a fruta, ela adiciona um ponto.</p>
+    <p class="explicacao">👉 Adiciona seu tamanho ao tamanho já existente, fazendo a cobra crescer ao pegar a fruta.</p>
+    <p class="explicacao">👉 A mensagem pegou serve para a fruta ir para outra posição.</p>
+    <p class="explicacao">👉 Quando pegamos a fruta, ela adiciona um ponto.</p>
+    <p class="explicacao">👉 Na cobra, temos 2 fantasias: cabeça e corpo, respectivamente.</p>
+    <p class="explicacao">👉 Mudar para a fantasia 2 antes de criar o clone serve para criar o clone do corpo da cobra e não da cabeça.</p>
+    <p class="explicacao">👉 O tempo próximo da criação do clone (abaixo de mova 1 passos) é a distância entre um corpo e outro.</p>
+    <br>
+    <p class="explicacao">👆 Mude o valor desse tempo ou remova o bloco e veja o resultado.</p>
+  </div>
+  <div class="bloco">
+    <h2>🍎 Fruta</h2>
+    <pre>
+quando [bandeira verde] for clicado
+vá para x: (41) y: (19)
+
+quando eu receber [pegou]
+esconda
+vá para [posição aleatória]
+mostre
+    </pre>
+    <p class="explicacao">👉 Quando inicia ou quando recebe “pegou”, troca de posição.</p>
+  </div>
+ 
+  <div class="bt">
+    <button class="voltar">
+      <a href="./jogo5.html">Voltar</a>
+  </button>
+    <!-- <button class="avancar">
+      <a href="./jogo6.html">Avançar</a>
+  </button> -->
+  </div>
+  <script src="./script.js"></script>
+
+</body>
+</html>
